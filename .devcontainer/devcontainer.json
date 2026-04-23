@@ -1,0 +1,14 @@
+{
+  "name": "ReadTheDocs Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/home/read_the_docs",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/read_the_docs,type=bind",
+
+}
