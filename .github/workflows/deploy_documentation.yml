@@ -1,4 +1,4 @@
-name: Deploy SIMROP documentation
+name: Deploy webpage
 
 on:
   push:
