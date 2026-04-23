@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIMROP core architecture &mdash; TOON DAEMEN 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+    <link rel="shortcut icon" href="../../_static/fm_48x48.svg"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="C++" href="../cpp/index.html" />
+    <link rel="prev" title="Architecture" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            TOON DAEMEN
+              <img src="../../_static/fm.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contributions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributions/projects_overview.html">Projects overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributions/projects_overview.html#simrop">2024-2538-SIMROP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributions/projects_overview.html#cto-action-palletizing-solution">2024-1023-CTO_ACTION-PALLETIZING_SOLUTION</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributions/reusable_results.html">Reusable results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributions/reusable_results.html#ur-tool-integration">UR + tool integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributions/reusable_results.html#motivation">Motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributions/reusable_results.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributions/reusable_results.html#the-palletizing-framework">The palletizing framework</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implementation best practices</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Architecture</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SIMROP core architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#component-manager-node">Component manager node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plugin-management">Plugin management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lifecycle-management">Lifecycle management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-of-the-component-manager-in-the-simrop-skillbased-framework">Use of the Component Manager in the SIMROP skill–based framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cpp/constructor_arguments.html">Passing constructor arguments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cpp/constructor_arguments.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp/constructor_arguments.html#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp/constructor_arguments.html#example-3">Example 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ros2/ros2.html">ROS2 best practices</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TOON DAEMEN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Architecture</a></li>
+      <li class="breadcrumb-item active">SIMROP core architecture</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/toondaemenFM/implementation_best_practices/blob/main/docs/source/implementation_best_practices/architecture/architecture.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="simrop-core-architecture">
+<span id="ref-core-architecture"></span><h1>SIMROP core architecture<a class="headerlink" href="#simrop-core-architecture" title="Link to this heading"></a></h1>
+<p>From an architectural point of view, the early development stages of the <strong>SIMROP</strong> project conceptualized and set up some fundamental key elements that are relevant in the context of the integration of modern flexible and intelligent systems. The fundamental setup of the overall architecture is mainly inspired on the design of the <a class="reference external" href="https://docs.nav2.org/">navigation stack for ROS2</a> (nav2).</p>
+<section id="component-manager-node">
+<span id="ref-component-manager-node"></span><h2>Component manager node<a class="headerlink" href="#component-manager-node" title="Link to this heading"></a></h2>
+<p>The most important reusable element is a promising generalization proving to be very advantageous for several existing and future integrations of soft- and hardware components. The <strong>Component Manager</strong> serves as a robust backbone for an observable and controllable runtime management of the software components it maintains, and is designed with scalability in mind. The figure below shows the main features provided by the Component Manager:</p>
+<figure class="align-default" id="fig-cd-component-manager">
+<a class="reference internal image-reference" href="../../_images/cd_component_manager.svg"><img alt="fig_cd_component_manager" src="../../_images/cd_component_manager.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">: Conceptual representation of a component manager node.</span><a class="headerlink" href="#fig-cd-component-manager" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="plugin-management">
+<h2>Plugin management<a class="headerlink" href="#plugin-management" title="Link to this heading"></a></h2>
+<p>The component manager loads and supervises plugin instances. These plugins can accomodate the implemention of the actual business logic, where the component manager and the plugin boilerplate provide all the framing around. Depending on the actual application that builds upon the component manager foundation, the user designs the base class of their component plugin, its derivatives that harbor the actual implementation, and a suitable interface format. As the Component Manager itself is designed for scalability, the design of plugins deriving from the base component is a straightforward process, while a lot of structural overhead is abstracted away by the available framing itself.</p>
+</section>
+<section id="lifecycle-management">
+<h2>Lifecycle management<a class="headerlink" href="#lifecycle-management" title="Link to this heading"></a></h2>
+<p>The component manager is a <a class="reference external" href="https://design.ros2.org/articles/node_lifecycle.html">ROS2 Lifecycle-enabled Node</a>. It means that it operates according to its own Lifecycle State Machine, and state transitions are controlled from outside the component manager itself. <a class="reference internal" href="#fig-stm-lifecycle-transitions"><span class="std std-numref">Figure 6</span></a> shows the possible lifecycle states of the component manager:</p>
+<ul class="simple">
+<li><p><strong>Unconfigured:</strong> The component manager is <em>started</em>, but is not <em>configured</em>. It does not maintain any plugin, and does not expose any interface except the one for conducting the Lifecycle state management which is inherently included in the ROS2 Lifecycle Node base class.
+<br></br></p></li>
+<li><p><strong>Inactive:</strong> The component manager <em>loaded</em> and <em>configured</em> the plugins listed in the associated plugin_list.yaml file. Each of the loaded plugins exposes its own interfaces, but while they are discoverable they are still idle. Any request on the interfaces gets rejected.
+<br></br></p></li>
+<li><p><strong>Active:</strong> The component manager <em>activated</em> the interfaces to the plugins, and access to the implemented business logic is effectively exposed. Important to mention is that all the plugins expose their functionality simultaneously, and can be used in parallel.
+<br></br></p></li>
+<li><p><strong>Finalized:</strong> The component manager <em>deactivated</em> and <em>unloaded</em> all the plugins. When all internal resources are released the Lifecycle node itself shuts down.</p></li>
+</ul>
+<figure class="align-default" id="fig-stm-lifecycle-transitions">
+<a class="reference internal image-reference" href="../../_images/stm_lifecycle_transitions.svg"><img alt="fig_stm_lifecycle_transitions" src="../../_images/stm_lifecycle_transitions.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">: State machine diagram representing the possible lifecycle states of a component manager node.</span><a class="headerlink" href="#fig-stm-lifecycle-transitions" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>At any time while the application is running, selected plugins can be <em>deactivated</em>, <em>reactivated</em>, <em>unloaded</em> or <em>reloaded</em> without interfering with the operational plugins or active processes. A <strong>Lifecycle Manager</strong> - whether it is an automated implementation or a user manually controlling the lifecycle state transitions - has always control over the global state of the component manager, and is in charge of coordinating its controlled lifecycle transitions. Therefore, the lifecycle management enables to conduct a controlled startup and shutdown of the software stack.</p>
+<figure class="align-default" id="fig-sd-lifecycle-management-startup">
+<a class="reference internal image-reference" href="../../_images/sd_lifecycle_management_startup.svg"><img alt="fig_sd_lifecycle_management_startup" src="../../_images/sd_lifecycle_management_startup.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">: Sequence diagram representing the lifecycle transitions conducting the controlled startup of a component manager node.</span><a class="headerlink" href="#fig-sd-lifecycle-management-startup" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-sd-lifecycle-management-shutdown">
+<a class="reference internal image-reference" href="../../_images/sd_lifecycle_management_shutdown.svg"><img alt="fig_sd_lifecycle_management_shutdown" src="../../_images/sd_lifecycle_management_shutdown.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">: Sequence diagram representing the lifecycle transitions conducting the controlled shutdown of a component manager node.</span><a class="headerlink" href="#fig-sd-lifecycle-management-shutdown" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="use-of-the-component-manager-in-the-simrop-skillbased-framework">
+<h2>Use of the Component Manager in the SIMROP skill–based framework<a class="headerlink" href="#use-of-the-component-manager-in-the-simrop-skillbased-framework" title="Link to this heading"></a></h2>
+<p>In the <strong>SIMROP</strong> architecture, the component manager is reused as the abstract base of both the <strong>task manager</strong> and the <strong>context manager</strong> (<a class="reference internal" href="#fig-dmd-task-context-manager"><span class="std std-numref">Figure 9</span></a>). These are the two main lifecycle nodes where the skill–based framework is build upon, and by inheritance from the component manager, they operate following the same principles and use the same boilerplate implementations.</p>
+<figure class="align-default" id="fig-dmd-task-context-manager">
+<a class="reference internal image-reference" href="../../_images/dmd_task_context_manager.svg"><img alt="" src="../../_images/dmd_task_context_manager.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">: Domain model diagram representing the <em>task manager</em> and <em>context manager</em> as the two main instances of the <em>component manager</em> boilerplate in the SIMROP skill–based framework.</span><a class="headerlink" href="#fig-dmd-task-context-manager" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <em>task plugins</em> supervised by the task manager and the <em>context plugins</em> supervised by the context manager both inherit from the same component plugin boilerplate. In the current implementation of the skill–based framework, the plugin base class is a templated <em>ActionServerComponent</em>, a plugin that will expose a single <a class="reference external" href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html">ROS2 action server</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current implementation of the SIMROP core framework only provides the <em>ActionServerComponent</em> and a <em>ServiceServerComponent</em> equivalent, which is a workable set of templates at this point but limits extensibility. A near future goal is to generalize towards a plugin boilerplate that accommodates an arbitrary number of <a class="reference external" href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html">ROS2 actions</a> and <a class="reference external" href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services.html">ROS2 services</a>.</p>
+</div>
+<figure class="align-default" id="fig-dmd-task-context-plugin">
+<a class="reference internal image-reference" href="../../_images/dmd_task_context_plugin.svg"><img alt="" src="../../_images/dmd_task_context_plugin.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">: Domain model diagram representing the <em>task base</em> and <em>context base</em> as the two main instances of the <em>action server component</em> plugin boilerplate in the SIMROP skill–based framework.</span><a class="headerlink" href="#fig-dmd-task-context-plugin" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cpp/index.html" class="btn btn-neutral float-right" title="C++" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Flanders Make vzw.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

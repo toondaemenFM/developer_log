@@ -1,0 +1,11 @@
+{
+    "contributions/projects_overview": 0.016,
+    "contributions/reusable_results": 0.013,
+    "implementation_best_practices/architecture/architecture": 0.014,
+    "implementation_best_practices/architecture/index": 0.002,
+    "implementation_best_practices/cpp/constructor_arguments": 0.004,
+    "implementation_best_practices/cpp/index": 0.002,
+    "implementation_best_practices/ros2/index": 0.002,
+    "implementation_best_practices/ros2/ros2": 0.002,
+    "index": 0.003
+}

@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reusable results &mdash; TOON DAEMEN 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+    <link rel="shortcut icon" href="../_static/fm_48x48.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Architecture" href="../implementation_best_practices/architecture/index.html" />
+    <link rel="prev" title="Projects overview" href="projects_overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TOON DAEMEN
+              <img src="../_static/fm.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contributions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="projects_overview.html">Projects overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="projects_overview.html#simrop">2024-2538-SIMROP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects_overview.html#cto-action-palletizing-solution">2024-1023-CTO_ACTION-PALLETIZING_SOLUTION</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reusable results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ur-tool-integration">UR + tool integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-palletizing-framework">The palletizing framework</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implementation best practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../implementation_best_practices/architecture/index.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../implementation_best_practices/architecture/architecture.html">SIMROP core architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/architecture/architecture.html#component-manager-node">Component manager node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/architecture/architecture.html#plugin-management">Plugin management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/architecture/architecture.html#lifecycle-management">Lifecycle management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/architecture/architecture.html#use-of-the-component-manager-in-the-simrop-skillbased-framework">Use of the Component Manager in the SIMROP skill–based framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation_best_practices/cpp/index.html">C++</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../implementation_best_practices/cpp/constructor_arguments.html">Passing constructor arguments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/cpp/constructor_arguments.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/cpp/constructor_arguments.html#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../implementation_best_practices/cpp/constructor_arguments.html#example-3">Example 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation_best_practices/ros2/index.html">ROS2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../implementation_best_practices/ros2/ros2.html">ROS2 best practices</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TOON DAEMEN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Reusable results</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/toondaemenFM/implementation_best_practices/blob/main/docs/source/contributions/reusable_results.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="reusable-results">
+<h1>Reusable results<a class="headerlink" href="#reusable-results" title="Link to this heading"></a></h1>
+<section id="ur-tool-integration">
+<h2>UR + tool integration<a class="headerlink" href="#ur-tool-integration" title="Link to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+UR + tool integration</div>
+<p class="sd-card-text">A reusable set of ROS2 packages that provide standard configurations for integration of a UR robot model with a custom tool.</p>
+<p class="sd-card-text"><strong>Target users:</strong> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">developer</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">robotics integrator</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">non-robot expert</span></p>
+<p class="sd-card-text"><strong>Tech stack:</strong> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">ROS2</span> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">ROS2 launch</span> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">urdf</span> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">MoveIt</span></p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/Flanders-Make-vzw/ur_tool_integration"><span>https://github.com/Flanders-Make-vzw/ur_tool_integration</span></a></div>
+</div>
+</div>
+</div>
+<section id="motivation">
+<h3>Motivation<a class="headerlink" href="#motivation" title="Link to this heading"></a></h3>
+<p>Setting up a robot configuration for <a class="reference external" href="https://moveit.ai/">MoveIt</a> tends to be a challenging procedure, especially when additional assets – like end-of-arm tooling for instance – need to be added to the kinematic chain. Using the <a class="reference external" href="https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html">MoveIt setup assistant tool</a>, users can create their configuration, but the resulting configuration is ambiguous and scales poorly to very similar configurations that shouldn’t require a reiteration of the entire configuration procedure. The flexibility is limited unless users edit the generated files afterwards, which requires users to have a decent understanding on <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Intermediate/URDF/URDF-Main.html">urdf</a> and how to navigate the generated packages.</p>
+<p>This Reusable Result provides users a non-robotics expert user well-reasoned configuration that allows to easily set up a UR robot with a custom end-effector tool.</p>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h3>
+<p>The UR tool integration repository provides standard configurations for bringing up any robot from the <a class="reference external" href="https://www.universal-robots.com/nl/">Universal Robots ecosystem</a> with a custom tool attached, for use within ROS2. It extends the existing robot models available from the <a class="reference external" href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver">UR driver for ROS2</a>, and abstracts the robot configuration for the users to some .yaml files. The separate packages within this project are layered intentionally such that users can launch a configuration for their robot-with-tool setup, that suits their use case. All configurations can easily be validated using either a simulated or a physical robot. The README in the <a class="reference external" href="https://github.com/Flanders-Make-vzw/ur_tool_integration/tree/develop">Github repository</a> can be considered as a tutorial that walks the user through the setup of the possible configurations, starting from the tool configuration itself, and ending at a fully functional configuration for collision-free trajectory planning and tracking with MoveIt.</p>
+<figure class="align-default" id="fig-ur-tool-model">
+<a class="reference internal image-reference" href="../_images/ur_tool_model.png"><img alt="fig_ur_tool_model" src="../_images/ur_tool_model.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">: Integrated model of a UR robot and a custom tool</span><a class="headerlink" href="#fig-ur-tool-model" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><br></br></p>
+</section>
+</section>
+<section id="the-palletizing-framework">
+<h2>The palletizing framework<a class="headerlink" href="#the-palletizing-framework" title="Link to this heading"></a></h2>
+<p>The main result developed and validated in the <a class="reference internal" href="projects_overview.html#ref-project-palletizing-solution"><span class="std std-ref">2024-1023-CTO_action_palletizing_solution</span></a> was the palletizing framework: a ROS2-integrated framework for accommodating pallet solver plugins. The palletizing framework itself comes with a library of <strong>MPLP</strong> solvers: these address the <strong>Manufacturer’s Pallet Loading Problem</strong>, where all boxes have the same size. These solvers can optimally stack the pallet following a certain pattern. Currently, two plugins are integrated as examples: <em>MPLP1</em> and <em>MPLP2</em>.</p>
+<figure class="align-default" id="fig-mplp-1">
+<a class="reference internal image-reference" href="../_images/mplp_1.png"><img alt="fig_mplp_1" src="../_images/mplp_1.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">: Palletizing example using the integrated pallet solver <strong>MPLP1</strong>. Left: user interface and pallet visualisation in RVIZ. Right: stacking pattern applied by the pallet solver plugin.</span><a class="headerlink" href="#fig-mplp-1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-mplp-2">
+<a class="reference internal image-reference" href="../_images/mplp_2.png"><img alt="fig_mplp_2" src="../_images/mplp_2.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">: Palletizing example using the integrated pallet solver <strong>MPLP2</strong>. Left: user interface and pallet visualisation in RVIZ. Right: stacking pattern applied by the pallet solver plugin.</span><a class="headerlink" href="#fig-mplp-2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="reference external" href="https://github.com/Flanders-Make-vzw/Ceros_Palletizing">Ceros pallet solver</a>, developed in the scope of the CTO action addresses the <strong>Distributor’s Pallet Loading Problem (DPLP)</strong>, where boxes have different sizes yet need to be optimally stacked. The solver algorithm was integrated as a pallet solver <strong>plugin</strong> for the palletizing framework as well, see the <a class="reference internal" href="projects_overview.html#ref-project-palletizing-solution"><span class="std std-ref">demonstrator on mixed palletizing</span></a>.</p>
+<div class="admon-no-icon admonition">
+<p class="admonition-title">Potential</p>
+<p>The Palletizing framework architecture as result of the 2024-1023 CTO action is a starting point layout for the development of an integrated solution that generalizes the palletizing problem. Integrators that would take up this framework could elaborate on the framework by developing solver plugins on the one hand, and by elaborating on the capabilities of the framing around on the other hand.</p>
+<p>Making it ready for open-source distribution in the ROS2-community is an option as well ofcourse.</p>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+The palletizing framework</div>
+<p class="sd-card-text">The implementation of the palletizing framework, built for accommodating pallet solver plugins. Includes the RVIZ plugins for pallet visualisation and the user interface to use the solvers. Includes an example library that implements two <strong>mplp</strong> solvers.</p>
+<p class="sd-card-text"><strong>Target users:</strong> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">developer</span> <span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">robotics integrator</span></p>
+<p class="sd-card-text"><strong>Tech stack:</strong> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">C++</span> <span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">ROS2</span></p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/Flanders-Make-vzw/2024-1023_CTO_action-palletizing_solution_framework"><span>https://github.com/Flanders-Make-vzw/2024-1023_CTO_action-palletizing_solution_framework</span></a></div>
+</div>
+</div>
+</div>
+<style>
+    .admon-no-icon .admonition-title::before {content: "";}
+</style></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="projects_overview.html" class="btn btn-neutral float-left" title="Projects overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../implementation_best_practices/architecture/index.html" class="btn btn-neutral float-right" title="Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Flanders Make vzw.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
