@@ -66,7 +66,3 @@ The implementation of the palletizing framework, built for accommodating pallet 
 
 **Tech stack:** {bdg-info}`C++` {bdg-info}`ROS2`
 :::
-
-<style>
-    .admon-no-icon .admonition-title::before {content: "";}
-</style>
