@@ -1,0 +1,8 @@
+
+.admon-no-icon .admonition-title::before {
+    content: "";
+}
+
+.admon-question .admonition-title::before {
+    content: "\1FBC4";
+}

@@ -44,8 +44,12 @@ The documentation and tutorial page about the architecture and use of the SIMROP
 
 {bdg-info}`read-the-docs`
 :::
-
 ::::
+
+:::{admonition} Issue tracking
+:class: admon-no-icon warning
+[2024-2835-SIMROP/issues](https://github.com/Flanders-Make-vzw/2024-2835-SIMROP/issues)
+:::
 
 :::{admonition} Remark: framework name
 :class: admon-no-icon
@@ -92,8 +96,3 @@ The implementation of the heuristics-based pallet solver.
 :::
 
 ::::
-
-
-<style>
-    .admon-no-icon .admonition-title::before {content: "";}
-</style>

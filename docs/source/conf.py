@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'TOON DAEMEN'
-copyright = '2026, Flanders Make vzw'
-author = 'Flanders Make vzw'
+copyright = '2026, Toon Daemen'
+author = 'Toon Daemen'
 
 release = '0.1'
 version = '0.1.0'
@@ -64,19 +64,21 @@ html_theme_options = {
     'titles_only': False
 }
 
-html_static_path = ['img']
-html_logo = "img/fm.svg"
-html_favicon = "img/fm_48x48.svg"
-
+html_static_path = ['_static']
+html_logo = "_static/img/fm.svg"
+html_favicon = "_static/img/fm_48x48.svg"
 html_show_sphinx = False
+html_css_files = ['css/custom.css']
 
 html_context = {
     "display_github": True,
     "github_user": "toondaemenFM",
-    "github_repo": "implementation_best_practices",
+    "github_repo": "developer_log",
     "github_version": "main",
     "conf_py_path": "/docs/source/",
 }
+
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
