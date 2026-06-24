@@ -21,3 +21,10 @@ implementation_best_practices/architecture/index
 implementation_best_practices/cpp/index
 implementation_best_practices/ros2/index
 ```
+
+```{toctree}
+:hidden:
+:maxdepth: 4
+:caption: Literature
+literature/references
+```

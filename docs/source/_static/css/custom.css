@@ -6,3 +6,7 @@
 .admon-question .admonition-title::before {
     content: "\1FBC4";
 }
+
+div[itemprop="articleBody"] p {
+  text-align: justify;
+}
