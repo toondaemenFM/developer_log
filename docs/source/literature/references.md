@@ -20,4 +20,13 @@ Author: Herman Bruyninckx, KU Leuven
 A book on the physical and mathematical models that are used to describe, analyse and synthesize
 computer-controlled robot motion. Base document from KU Leuven applied mechanics courses in the robotics and mechatronics master.
 :::
+
+:::{grid-item-card} Modern Robotics: Mechanics, Planning, and Control
+:link: https://hades.mech.northwestern.edu/images/7/7f/MR.pdf
+
+Author: Kevin M. Lynch and Frank C. Park
+
+A mathematically rigorous introduction to robotics, covering robot kinematics, dynamics, trajectory generation, motion planning, control, and manipulation. It develops these topics systematically, founded on the concepts of rigid-body kinematics and dynamics, with an emphasis on understanding the underlying principles.
+:::
+(See the [video lessons](https://modernrobotics.northwestern.edu/nu-gm-book-resource/introduction-autoplay/#department) along with the textbook.)
 ::::
